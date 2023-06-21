@@ -1,5 +1,8 @@
 Tittle Avocados_Ml
 
+![avocado](https://github.com/The-DigitalAcademy/Machine_Learning-Avocados-/assets/116943179/a09dd11d-0842-4411-ae65-34992e42e54b)
+
+
 Table of Contents 
 . title 
 . general info 
