@@ -17,28 +17,6 @@ st.write("~~~~~~~~~")
 st.markdown("<h2 style='text-align: center; color: white;'>Welcome to Wizards Market!</h2>", unsafe_allow_html=True)
 st.write("~~~~~~~~~~~")
 
-# # Load the dataset
-# data = pd.read_csv('avocado.csv')
-
-# # Perform one-hot encoding for categorical variables
-# encoder = OneHotEncoder(drop="first")
-# encoded_data = pd.get_dummies(data, columns=['Date','Total Volume','4046','4225','4770','type','year','region'])
-
-# # Split the dataset into features (X) and target variable (y)
-# features = ['Date','TotalVolume','4046','4225','4770','TotalBags','SmallBags','LargeBags','XLargeBags','type','year','region']
-# target = 'AveragePrice'
-# X = encoded_data.drop(target, axis=1)
-# Y = encoded_data[target]
-# scale = StandardScaler()
-# scaledX = scale.fit_transform(X)
-
-# X_train, X_test, y_train, y_test = train_test_split(scaledX, Y, test_size=0.2, random_state=42)
-
-# Create and train the model
-# regressor = RandomForestRegressor(n_estimators=100, random_state=0)
-# regressor.fit(X_train, y_train)
-
-
 with st.form(key='display options'):
     st.write("1. Display Avocado Average Price Prediction\n")
     new_tot = st.number_input("Total Number Of Avocado-4046: ")
@@ -72,32 +50,11 @@ with st.form(key='display options'):
                         
         
         test_y_pred = model.predict(user_input)
-        # train_y_pred = model.predict(X_train)
 
-        # mse = mean_squared_error(y_train, train_y_pred)
-        # r2 = r2_score(y_train, train_y_pred)
-        # st.write(f"Mean Squared Error (Train): {mse}")
-        # st.write(f"R-squared (Train): {r2}")
-
-        # mse = mean_squared_error(y_test, test_y_pred)
-        # r2 = r2_score(y_test, test_y_pred)
-        # st.write(f"Mean Squared Error (Test): {mse}")
-        # st.write(f"R-squared (Test): {r2}")
-
-        # # Perform one-hot encoding for user input
-        # encoded_user_input = pd.get_dummies(user_input, columns=['season', 'region', 'month', 'type'])
-        # encoded_user_input = encoded_user_input.reindex(columns=X.columns, fill_value=0)
-
-        # Make predictions using the trained model
-        # price_prediction = regressor.predict(scale.transform(encoded_user_input))
-
-        # Display the predicted price
         st.write("Predicted Average Price:", test_y_pred[0])
         st.markdown("Display Accuracy:")
-        # for key, value in results.items():
-        #     st.write(f"- {key}: {value}")
+    
         st.markdown("Display AveragePrice:")
-        # for key, value in results.items():
-        #      st.write(f"- {key}: {value}")
+       
 
 st.balloons()
